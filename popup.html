@@ -23,9 +23,28 @@
         <br>
         <input type="checkbox" class="btn-check" id="enableExtensionOnlyInGames" checked>
         <label class="btn btn-outline-dark" for="enableExtensionOnlyInGames">Enable Extension Only in Games</label>
+       <br>
         <input type="checkbox" class="btn-check" id="disableCPS" >
         <label class="btn btn-outline-dark" for="disableCPS">Disable CPS Counter</label>
    <br>
+   <label for="Size" class="form-label">Size</label>
+<input type="range" class="form-range" id="Size" min="0" max="100" value="50" step="1">
+   <br>
+   <label for="Keystrokes-Color" class="form-label">Keystrokes Text Color</label>
+   <input type="color" value="#000000" class="form-control form-control-color" id="Keystrokes-Color" title="Choose your color">
+   <br>
+   <label for="Keystrokes-Background-Color" class="form-label">Keystrokes Background Color</label>
+   <input  type="color" value="#909090" class="form-control form-control-color" id="Keystrokes-Background-Color" title="Choose your color">
+   <br>
+      <label for="Keystrokes-Selected-Color" class="form-label">Keystrokes Selected Text Color</label>
+   <input type="color" value="#000000" class="form-control form-control-color" id="Keystrokes-Selected-Color" title="Choose your color">
+   <br>
+   <label for="Keystrokes-Selected-Background-Color" class="form-label">Keystrokes Selected Background Color</label>
+   <input  type="color" value="#ffffff" class="form-control form-control-color" id="Keystrokes-Selected-Background-Color" title="Choose your color">
+   <br>
+   <label for="Keystrokes-Opacity" class="form-label">Opacity</label>
+   <input type="range" class="form-range" id="Keystrokes-Opacity" min="0" max="100" value="100" step="1">
+<br>
    <select class="form-select" id="Keystrokes-Pos" title="Position of the Keystrokes Counter">
         <option value="TL">Top Left</option>
         <option value="TR">Top Right</option>
@@ -34,7 +53,15 @@
    </select>
         <br>
         <div id="Keystrokes Preview">
-            <div class="Keystroke-CrExt">CPS: #</div>
+            <div class="Keystroke-CrExt" style="width:9.2em;">CPS: #</div>
+            <br>
+               <div class="Keystroke-CrExt">RMB</div>
+            <div class="Keystroke-CrExt">W</div>
+              <div class="Keystroke-CrExt">LMB</div>
+              <br>
+                <div class="Keystroke-CrExt">A</div>
+                  <div class="Keystroke-CrExt">S</div>
+                    <div class="Keystroke-CrExt">D</div>
         </div>
     </div>
     <small>Props to the Fredoka Font, & Bootstrap</small>

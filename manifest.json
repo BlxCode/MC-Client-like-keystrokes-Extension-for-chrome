@@ -20,7 +20,7 @@
     "512": "Images/512.png"
   },
    "content_security_policy": {
-      "extension_pages":"script-src 'self' 'self';"
+      "extension_pages":"script-src 'self' "
    },
   "content_scripts": [
     {
