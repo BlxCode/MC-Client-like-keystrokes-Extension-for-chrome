@@ -45,6 +45,8 @@
    <label for="Keystrokes-Opacity" class="form-label">Opacity</label>
    <input type="range" class="form-range" id="Keystrokes-Opacity" min="0" max="100" value="100" step="1">
 <br>
+
+<label for ="Keystrokes-Pos" class="form-label">Position of the Keystrokes Counter</label>
    <select class="form-select" id="Keystrokes-Pos" title="Position of the Keystrokes Counter">
         <option value="TL">Top Left</option>
         <option value="TR">Top Right</option>
@@ -53,17 +55,21 @@
    </select>
         <br>
         <div id="Keystrokes Preview">
-            <div class="Keystroke-CrExt" style="width:9.2em;">CPS: #</div>
+            <div id="cps" class="Keystroke-CrExt" style="width:9.2em;">CPS: #</div>
             <br>
-               <div class="Keystroke-CrExt">RMB</div>
-            <div class="Keystroke-CrExt">W</div>
-              <div class="Keystroke-CrExt">LMB</div>
+               <div id="rmb" class="Keystroke-CrExt">RMB</div>
+            <div id="w" class="Keystroke-CrExt">W</div>
+              <div id="lmb" class="Keystroke-CrExt">LMB</div>
               <br>
-                <div class="Keystroke-CrExt">A</div>
-                  <div class="Keystroke-CrExt">S</div>
-                    <div class="Keystroke-CrExt">D</div>
+                <div id="a" class="Keystroke-CrExt">A</div>
+                  <div id="s" class="Keystroke-CrExt">S</div>
+                    <div id="d" class="Keystroke-CrExt">D</div>
+                    <br>
+                      <div id="space" class="Keystroke-CrExt" style="width:4.5em;">Space</div>
+                        <div id="shift" class="Keystroke-CrExt" style="width:4.6em;">Shift</div>
         </div>
     </div>
     <small>Props to the Fredoka Font, & Bootstrap</small>
+    <script src="popup.js"></script>
 </body>
 </html>
