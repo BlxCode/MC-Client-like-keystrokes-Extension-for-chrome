@@ -1,8 +1,8 @@
 {
   
     "manifest_version": 3,
-  "name": "Keystrokes Web Client",
-  "description": "Keystrokes Web Client is a web-based client for the Keystrokes mod in most M.C. Clients, allowing users to see their keystrokes in real-time.",
+  "name": "Keystrokes Web Module",
+  "description": "Keystrokes Web Module is a web-based module for the Keystrokes mod in most M.C. Clients, allowing users to see their keystrokes in real-time.",
   "version": "0.1",
   "permissions": [
     "storage"
@@ -29,6 +29,9 @@
       ],
       "js": [
 "./content.js"
+      ],
+      "css": [
+        "./content.css"
       ]
     
     }

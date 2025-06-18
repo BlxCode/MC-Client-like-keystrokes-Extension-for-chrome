@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.Keystroke-CrExt{
+    background-color:#909090;
+    color:black;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 900;
+    text-align:center;
+    font-size: 2.5em;
+    margin:0px;
+    vertical-align:middle;
+    display:inline-block;
+    line-height: 2.5em;
+    border-radius: 0.5em;
+    border-color:black;
+    border-style: solid;
+    border-width:.2em;
+    width:3em;
+    height:3em;
+   
+
+}
+#KeystrokeWrapper-CrExt{
+position:fixed;
+bottom:5px;
+left:5px;
+z-index: 9999;
+cursor:default;
+user-select:none;
+}
