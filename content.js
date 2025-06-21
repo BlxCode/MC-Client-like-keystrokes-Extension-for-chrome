@@ -1,4 +1,7 @@
 // Load Settings
+function makeSpace (wat) {
+document.body.appendChild(wat);
+}
 var KeystrokeWrapper = document.createElement("blxms-keystroke-web-module-cr-ext");
 KeystrokeWrapper.id = "KeystrokeWrapper-CrExt";
 document.body.appendChild(KeystrokeWrapper);
@@ -10,18 +13,25 @@ KeystrokeWrapper.appendChild(variable);
 }
 var cps = document.createElement("div");
 makeStroke(cps, "CPS: 0");
+cps.style.width = "9.2em";
+var br1 = document.createElement("br");
+makeSpace(br1);
 var lmb = document.createElement("div");
 makeStroke(lmb, "LMB");
 var w = document.createElement("div");
 makeStroke(w, "W");
 var rmb = document.createElement("div");
 makeStroke(rmb, "RMB");
+var br2 = document.createElement("br");
+makeSpace(br2);
 var a = document.createElement("div");
 makeStroke(a, "A");
 var s = document.createElement("div");
 makeStroke(s, "S");
 var d = document.createElement("div");
 makeStroke(d, "D");
+var br3 = document.createElement("br");
+makeSpace(br3);
 var space = document.createElement("div");
 makeStroke(space, "Space");
 var shift = document.createElement("div");
