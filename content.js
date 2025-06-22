@@ -1,3 +1,10 @@
+
+
+
+const link = document.createElement("link");
+link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
 // Load Settings
 var KeystrokeWrapper = document.createElement("blxms-keystroke-web-module-cr-ext");
 KeystrokeWrapper.id = "KeystrokeWrapper-CrExt";
@@ -49,10 +56,6 @@ chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'
     shift.style.color = Color;
     rmb.style.color = Color;
     lmb.style.color = Color;
-    document.getElementById("Keystrokes-Selected-Background-Color").value = bgColorSelected;
-    document.getElementById("Keystrokes-Background-Color").value = bgColor;
-    document.getElementById("Keystrokes-Color").value = Color;
-    document.getElementById("Keystrokes-Selected-Color").value = ColorSelected;
 });
 
 var cpsNum = 0;
