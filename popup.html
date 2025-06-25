@@ -31,9 +31,11 @@
    <label for="Keystrokes-Selected-Background-Color" class="form-label">Keystrokes Selected Background Color</label>
    <input  type="color" value="#ffffff" class="form-control form-control-color" id="Keystrokes-Selected-Background-Color" title="Choose your color">
    <br>
- 
+   <label for="Keystrokes-Size" id="Keystrokes-Size-Text" class="form-label">Keystrokes Size: 1</label>
+    <input type="range" class="form-control" value="1" max="1.5" min="0.5" step=".01" id="Keystrokes-Size" title="Choose your size">
+ <br>
 
-        <button class="btn btn-primary" id="apply">Apply</button>
+        <button class="btn btn-primary" title="Will apply on reload." id="apply">Save</button>
         <br><br>
         <div id="Keystrokes Preview">
             <div id="cps" class="Keystroke-CrExt" style="width:9.2em;">CPS: #</div>

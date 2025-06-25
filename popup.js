@@ -137,3 +137,11 @@ setInterval(() => {
 
 
 
+document.getElementById("Keystrokes-Size").addEventListener("change", function() {
+    document.getElementById("Keystrokes-Size-Text").innerText = "Keystrokes Size: "+this``.value;
+  
+    document.querySelectorAll(".Keystroke-CrExt").forEach(function(element) {
+        element.style.fontSize = this.value + "px";
+    });
+});
+

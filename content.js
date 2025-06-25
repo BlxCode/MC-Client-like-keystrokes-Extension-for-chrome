@@ -133,6 +133,10 @@ let clickTimestamps = [];
 
 document.addEventListener("click", () => {
     clickTimestamps.push(Date.now());
+        const now = Date.now();
+    clickTimestamps = clickTimestamps.filter(ts => now - ts <= 1000);
+    const cpsNum = clickTimestamps.length;
+    cps.innerText = "CPS: " + cpsNum;
 });
 
 setInterval(() => {
@@ -140,6 +144,5 @@ setInterval(() => {
     clickTimestamps = clickTimestamps.filter(ts => now - ts <= 1000);
     const cpsNum = clickTimestamps.length;
     cps.innerText = "CPS: " + cpsNum;
-}, 250);
-
+}, 500);
 
