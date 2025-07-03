@@ -45,8 +45,13 @@ var shift = document.createElement("div");
 makeStroke(shift, "Shift");
 chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'], function(result) {
     bgColorSelected = result.bgColorSelected || bgColorSelected;
+    console.log(bgColorSelected+" BGCOLORSOLECTED");
     bgColor = result.bgColor || bgColor;
+    console.log(bgColor+" BG COLOR");
+    console.log(Color + "COLOR");
+    
     Color = result.Color || Color;
+    
     ColorSelected = result.ColorSelected || ColorSelected;
     w.style.backgroundColor = bgColor;
     a.style.backgroundColor = bgColor;
