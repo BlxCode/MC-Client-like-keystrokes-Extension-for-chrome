@@ -53,6 +53,14 @@ chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'
     Color = result.Color || Color;
     
     ColorSelected = result.ColorSelected || ColorSelected;
+if(bgColorSelected == undefined && bgColor == undefined){
+bgColorSelected = "#ffffff";
+bgColor = "#909090";
+Color = "#000000";
+ColorSelected = "#000000";
+ chrome.storage.local.set({bgColorSelected: bgColorSelected, bgColor: bgColor, Color: Color, ColorSelected: ColorSelected});
+
+}
     w.style.backgroundColor = bgColor;
     a.style.backgroundColor = bgColor;
     s.style.backgroundColor = bgColor;
