@@ -8,18 +8,21 @@ var s = document.getElementById("s");
 var d = document.getElementById("d");
 var space = document.getElementById("space");
 var shift = document.getElementById("shift");
+var c = document.getElementById("c");
 var cpsNum = 0;
 var secsPassed = 0;
 var bgColorSelected = document.getElementById("Keystrokes-Selected-Background-Color").value;
 var bgColor = document.getElementById("Keystrokes-Background-Color").value;
 var Color = document.getElementById("Keystrokes-Color").value;
 var ColorSelected = document.getElementById("Keystrokes-Selected-Color").value;
+var size = document.getElementById("Keystrokes-Size").value;
 document.getElementById("apply").addEventListener("click", function() {
      bgColorSelected = document.getElementById("Keystrokes-Selected-Background-Color").value;
+     size = document.getElementById("Keystrokes-Size").value;
  bgColor = document.getElementById("Keystrokes-Background-Color").value;
  Color = document.getElementById("Keystrokes-Color").value;
  ColorSelected = document.getElementById("Keystrokes-Selected-Color").value;
-    chrome.storage.local.set({bgColorSelected: bgColorSelected, bgColor: bgColor, Color: Color, ColorSelected: ColorSelected});
+    chrome.storage.local.set({bgColorSelected: bgColorSelected, bgColor: bgColor, Color: Color, ColorSelected: ColorSelected,size:size});
     w.style.backgroundColor = bgColor;
     a.style.backgroundColor = bgColor;
     s.style.backgroundColor = bgColor;
@@ -40,11 +43,12 @@ document.getElementById("apply").addEventListener("click", function() {
     lmb.style.color = Color;
 
 });
-chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'], function(result) {
+chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected','size'], function(result) {
     bgColorSelected = result.bgColorSelected || bgColorSelected;
     bgColor = result.bgColor || bgColor;
     Color = result.Color || Color;
     ColorSelected = result.ColorSelected || ColorSelected;
+    size = result.size || size;
     w.style.backgroundColor = bgColor;
     a.style.backgroundColor = bgColor;
     s.style.backgroundColor = bgColor;
@@ -54,6 +58,9 @@ chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'
     rmb.style.backgroundColor = bgColor;
     lmb.style.backgroundColor = bgColor;
     cps.style.backgroundColor = bgColor;
+    c.style.backgroundColor = bgColor;
+    cps.style.color = Color;
+    c.style.color = Color;
     cps.style.color = Color;
     w.style.color = Color;
     a.style.color = Color;
@@ -63,6 +70,8 @@ chrome.storage.local.get(['bgColorSelected', 'bgColor', 'Color', 'ColorSelected'
     shift.style.color = Color;
     rmb.style.color = Color;
     lmb.style.color = Color;
+    document.getElementById("Keystrokes-Size-Text").innerText = "Keystrokes Size: "+size;
+    document.getElementById("Keystrokes-Size").value = size;
     document.getElementById("Keystrokes-Selected-Background-Color").value = bgColorSelected;
     document.getElementById("Keystrokes-Background-Color").value = bgColor;
     document.getElementById("Keystrokes-Color").value = Color;
@@ -81,11 +90,16 @@ if(event.key=="w"){
     space.style.backgroundColor = bgColorSelected;
 } if(event.key=="Shift"){
     shift.style.backgroundColor = bgColorSelected;
+} if(event.key=="c"){
+    c.style.backgroundColor = bgColorSelected;
 }
 });
 document.addEventListener("keyup", (event)=>{
 if(event.key=="w"){
     w.style.backgroundColor = bgColor;
+}
+if(event.key=="c"){
+    c.style.backgroundColor = bgColor;
 }
 if(event.key=="a"){
     a.style.backgroundColor = bgColor;
@@ -138,7 +152,7 @@ setInterval(() => {
 
 
 document.getElementById("Keystrokes-Size").addEventListener("change", function() {
-    document.getElementById("Keystrokes-Size-Text").innerText = "Keystrokes Size: "+this``.value;
+    document.getElementById("Keystrokes-Size-Text").innerText = "Keystrokes Size: "+this.value;
   
     document.querySelectorAll(".Keystroke-CrExt").forEach(function(element) {
         element.style.fontSize = this.value + "px";
