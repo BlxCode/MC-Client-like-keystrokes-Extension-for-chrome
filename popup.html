@@ -1,66 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/d2a23fcf0d.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/d2a23fcf0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-        *{
-            font-family:Fredoka !important;
-          
-        }
+      * {
+        font-family: Fredoka !important;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h1>Configuration</h1>
-        <p>You can configure the extension settings here.</p>
-     
-   <label for="Keystrokes-Color" class="form-label">Keystrokes Text Color</label>
-   <input type="color" value="#000000" class="form-control form-control-color" id="Keystrokes-Color" title="Choose your color">
-   <br>
-   <label for="Keystrokes-Background-Color" class="form-label">Keystrokes Background Color</label>
-   <input  type="color" value="#909090" class="form-control form-control-color" id="Keystrokes-Background-Color" title="Choose your color">
-   <br>
-      <label hidden for="Keystrokes-Selected-Color" class="form-label">Keystrokes Selected Text Color</label>
-   <input hidden type="color" value="#000000" class="form-control form-control-color" id="Keystrokes-Selected-Color" title="Choose your color">
-   <br>
-   <label for="Keystrokes-Selected-Background-Color" class="form-label">Keystrokes Selected Background Color</label>
-   <input  type="color" value="#ffffff" class="form-control form-control-color" id="Keystrokes-Selected-Background-Color" title="Choose your color">
-   <br>
-   <label for="Keystrokes-Size" id="Keystrokes-Size-Text" class="form-label">Keystrokes Size: 1</label>
-    <input type="range" class="form-control" value="1" max="1.5" min="0.5" step=".01" id="Keystrokes-Size" title="Choose your size">
- <br>
-<label for = "showCps" class="form-label">Show CPS <span title="Showing CPS will affect preformance" class="bg-warning" style="border-radius:5px;padding-left:7.5px; cursor:help; padding-right:7.5px;">i</span> : </label>
+      <h1>Configuration</h1>
+      <p>You can configure the extension settings here.</p>
 
-   <input type="checkbox" id="showCps" class="form-check-input">
+      <label for="Keystrokes-Color" class="form-label"
+        >Keystrokes Text Color</label
+      >
+      <input
+        type="color"
+        value="#000000"
+        class="form-control form-control-color"
+        id="Keystrokes-Color"
+        title="Choose your color"
+      />
+      <br />
+      <label for="Keystrokes-Background-Color" class="form-label"
+        >Keystrokes Background Color</label
+      >
+      <input
+        type="color"
+        value="#909090"
+        class="form-control form-control-color"
+        id="Keystrokes-Background-Color"
+        title="Choose your color"
+      />
+      <br />
+      <label hidden for="Keystrokes-Selected-Color" class="form-label"
+        >Keystrokes Selected Text Color</label
+      >
+      <input
+        hidden
+        type="color"
+        value="#000000"
+        class="form-control form-control-color"
+        id="Keystrokes-Selected-Color"
+        title="Choose your color"
+      />
+      <br />
+      <label for="Keystrokes-Selected-Background-Color" class="form-label"
+        >Keystrokes Selected Background Color</label
+      >
+      <input
+        type="color"
+        value="#ffffff"
+        class="form-control form-control-color"
+        id="Keystrokes-Selected-Background-Color"
+        title="Choose your color"
+      />
+      <br />
+      <label for="Keystrokes-Size" id="Keystrokes-Size-Text" class="form-label"
+        >Keystrokes Size: 1</label
+      >
+      <input
+        type="range"
+        class="form-control"
+        value="1"
+        max="1.5"
+        min="0.5"
+        step=".01"
+        id="Keystrokes-Size"
+        title="Choose your size"
+      />
+      <br />
+      <label for="showCps" class="form-label"
+        >Show CPS
+        <span
+          title="Showing CPS will affect preformance"
+          class="bg-warning"
+          style="
+            border-radius: 5px;
+            padding-left: 7.5px;
+            cursor: help;
+            padding-right: 7.5px;
+          "
+          >i</span
+        >
+        :
+      </label>
 
-   <br>
-   <br>
-        <button class="btn btn-primary" title="Will apply on reload." id="apply">Save</button>
-        <br><br>
-        <div id="Keystrokes Preview">
-            <div id="cps" class="Keystroke-CrExt" style="width:9.2em;">CPS: #</div>
-            <br>
-             <div id="lmb" class="Keystroke-CrExt">LMB</div>
+      <input type="checkbox" id="showCps" class="form-check-input" />
 
-            <div id="w" class="Keystroke-CrExt">W</div>
-                            <div id="rmb" class="Keystroke-CrExt">RMB</div>
-              <br>
-                <div id="a" class="Keystroke-CrExt">A</div>
-                  <div id="s" class="Keystroke-CrExt">S</div>
-                    <div id="d" class="Keystroke-CrExt">D</div>
-                    <br>
-                      <div id="space" class="Keystroke-CrExt">Space</div>
-            <div id="c" class="Keystroke-CrExt">C</div>
-                        <div id="shift" class="Keystroke-CrExt">Shift</div>
+      <br />
+      <br />
+      <button class="btn btn-primary" title="Will apply on reload." id="apply">
+        Save
+      </button>
+      <br /><br />
+      <div id="Keystrokes Preview">
+        <div id="cps" class="Keystroke-CrExt" style="width: 9.2em">CPS: #</div>
+        <br />
+        <div id="lmb" class="Keystroke-CrExt">LMB</div>
+
+        <div id="w" class="Keystroke-CrExt">W</div>
+        <div id="rmb" class="Keystroke-CrExt">RMB</div>
+        <br />
+        <div id="a" class="Keystroke-CrExt">A</div>
+        <div id="s" class="Keystroke-CrExt">S</div>
+        <div id="d" class="Keystroke-CrExt">D</div>
+        <br />
+        <div id="custom1" class="Keystroke-CrExt">
+          <select class="">
+            <option>Space</option>
+        
+        </select>
         </div>
+        <div id="custom2" class="Keystroke-CrExt">
+          <select>
+<option>C</option>
+<option>Space</option>
+
+          </select>
+        </div>
+        <div id="custom3" class="Keystroke-CrExt">
+            <select>
+<option>Shift</option>
+<option>Ctrl</option>
+<option>Alt</option>
+<option>Tab</option>
+<option>B</option>
+<option>C</option>
+<option>D</option>
+<option>E</option>
+<option>F</option>
+<option>G</option>
+<option>H</option>
+<option>I</option>
+<option>J</option>
+<option>K</option>
+<option>L</option>
+<option>M</option>
+<option>N</option>
+<option>O</option>
+<option>P</option>
+<option>Q</option>
+<option>R</option>
+<option>S</option>
+<option>T</option>
+<option>U</option>
+<option>V</option>
+<option>W</option>
+<option>X</option>
+<option>Y</option>
+<option>Z</option>
+<option>/</option>
+<option>Fn5</option>
+<option>Fn8</option>
+            </select>
+        </div>
+      </div>
     </div>
     <small>Props to the Fredoka Font, & Bootstrap</small>
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>
