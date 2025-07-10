@@ -6,6 +6,7 @@ var bgColor;
 var Color;
 var ColorSelected;
 var size;
+console.log(chrome.storage.local.get(["size"]));
 chrome.storage.local.get(
   ["bgColorSelected", "bgColor", "Color", "ColorSelected","size"],
   function (result) {
@@ -16,7 +17,8 @@ chrome.storage.local.get(
     console.log(Color + "COLOR");
 
     Color = result.Color || Color;
-size = result.Size || size;
+size = result.size || 1;
+console.log(size + " SIZE");
     ColorSelected = result.ColorSelected || ColorSelected;
     if (bgColorSelected == undefined && bgColor == undefined) {
       bgColorSelected = "#ffffff";
@@ -67,11 +69,14 @@ var KeystrokeWrapper = document.createElement(
 KeystrokeWrapper.id = "KeystrokeWrapper-CrExt";
 document.body.appendChild(KeystrokeWrapper);
 var LMB = document.createElement("div");
+size = chrome.storage.local.get(["size"]).size || 1;
 function makeStroke(variable, text) {
   variable.innerText = text;
   variable.className = "Keystroke-CrExt";
   KeystrokeWrapper.appendChild(variable);
-  if(size != 1){
+  console.log(size + " SIZE IN MAKE STROKE");
+  if(size != 1||size != undefined){
+    
    
     variable.style.width=3*size+"em".toString();
    

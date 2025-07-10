@@ -8,6 +8,7 @@ var d = document.getElementById("d");
 var space = document.getElementById("space");
 var shift = document.getElementById("shift");
 var c = document.getElementById("c");
+var isCpsEnabled;
 var cpsNum = 0;
 var secsPassed = 0;
 var bgColorSelected = document.getElementById(
@@ -25,12 +26,14 @@ document.getElementById("apply").addEventListener("click", function () {
   bgColor = document.getElementById("Keystrokes-Background-Color").value;
   Color = document.getElementById("Keystrokes-Color").value;
   ColorSelected = document.getElementById("Keystrokes-Selected-Color").value;
+  isCpsEnabled = document.getElementById("showCps").checked;
   chrome.storage.local.set({
     bgColorSelected: bgColorSelected,
     bgColor: bgColor,
     Color: Color,
     ColorSelected: ColorSelected,
     size: size,
+    showCps: isCpsEnabled,
   });
   w.style.backgroundColor = bgColor;
   a.style.backgroundColor = bgColor;
@@ -41,6 +44,7 @@ document.getElementById("apply").addEventListener("click", function () {
   rmb.style.backgroundColor = bgColor;
   lmb.style.backgroundColor = bgColor;
   cps.style.backgroundColor = bgColor;
+  document.getElementById("Keystrokes-Size-Text").innerText ="Keystrokes Size: " + size;
   cps.style.color = Color;
   w.style.color = Color;
   a.style.color = Color;
@@ -52,13 +56,14 @@ document.getElementById("apply").addEventListener("click", function () {
   lmb.style.color = Color;
 });
 chrome.storage.local.get(
-  ["bgColorSelected", "bgColor", "Color", "ColorSelected", "size"],
+  ["bgColorSelected", "bgColor", "Color", "ColorSelected", "size","showCps"],
   function (result) {
     bgColorSelected = result.bgColorSelected || bgColorSelected;
     bgColor = result.bgColor || bgColor;
     Color = result.Color || Color;
     ColorSelected = result.ColorSelected || ColorSelected;
-    size = result.size || size;
+    isCpsEnabled = result.showCps || true;
+    size = result.size || 1;
     w.style.backgroundColor = bgColor;
     a.style.backgroundColor = bgColor;
     s.style.backgroundColor = bgColor;
@@ -79,6 +84,7 @@ chrome.storage.local.get(
     space.style.color = Color;
     shift.style.color = Color;
     rmb.style.color = Color;
+    console.log(size);
     lmb.style.color = Color;
     document.getElementById("Keystrokes-Size-Text").innerText =
       "Keystrokes Size: " + size;
@@ -165,12 +171,16 @@ document.addEventListener("click", () => {
   clickTimestamps.push(Date.now());
 });
 
-setInterval(() => {
+var cpsInterval = setInterval(() => {
   const now = Date.now();
   clickTimestamps = clickTimestamps.filter((ts) => now - ts <= 1000);
   const cpsNum = clickTimestamps.length;
   cps.innerText = "CPS: " + cpsNum;
 }, 250);
+if(!isCpsEnabled) {
+  cps.style.display = "none";
+  clearInterval(cpsInterval);
+}
 
 document
   .getElementById("Keystrokes-Size")
