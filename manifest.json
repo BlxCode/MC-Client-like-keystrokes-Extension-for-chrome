@@ -1,40 +1,35 @@
 {
-  
+
     "manifest_version": 3,
-  "name": "Keystrokes Web Module",
-  "description": "Keystrokes Web Module is a web-based module for the Keystrokes mod in most M.C. Clients, allowing users to see their keystrokes in real-time.",
-  "version": "0.1",
-  "permissions": [
-    "storage"
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "Images/512.png"
-  },
- 
+  "name": "new tab thingy, and no yt shorts",
+  "description": "desciprtion.",
+
+  "version": "67",
   "icons": {
-    "16": "Images/16.png",
-    "32": "Images/32.png",
-    "48": "Images/48.png",
-    "128": "Images/128.png",
-    "512": "Images/512.png"
+   "256": "./W_NewTabIcon111111.png",
+    "128": "./W_NewTabIcon111111.png",
+    "48": "./W_NewTabIcon111111.png",
+    "32": "./W_NewTabIcon111111.png",
+    "16": "./W_NewTabIcon111111.png"
   },
+  "permissions": [
+
+  ],
+
+
    "content_security_policy": {
       "extension_pages":"script-src 'self' "
    },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-"./content.js"
-      ],
-      "css": [
-        "./content.css"
-      ]
-    
-    }
-    
-  ]
+     "chrome_url_overrides": {
+    "newtab": "./index.html"
+  },
+   "content_scripts": [
+   {
+     "matches": ["<all_urls>"],
+     "js": ["./websiteBlock.js"],
+     "run_at": "document_start"
+}
+]
+
+
 }

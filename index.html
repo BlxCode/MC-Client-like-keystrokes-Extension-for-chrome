@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blxm's New Tab</title>
+    <style>
+        @keyframes gradualFadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        body{
+            text-align: center;
+            user-select: none;
+            color:rgb(199, 196, 196);
+            font-family: Fredoka;
+            animation: gradualFadeIn 0.5s ease-in-out;
+            background-repeat: no-repeat;
+           background-size:cover;
+        }
+       
+         #time12 {
+            font-size: 6em;
+            font-weight: 400;
+        }
+
+        #time24 {
+           
+            margin-bottom:-0.5em;
+            font-size: 10em;
+            font-weight: 500;
+        }
+        #what12 {
+            font-size: 0.4em;
+            font-weight: 100;
+            margin-left:-0.5em;
+        }
+        #weather{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            background-color:rgba(0, 0, 0, 0.3);
+            padding:10px;
+            border-radius:10px;
+            font-size:1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: gradualFadeIn 1s ease-in-out;
+            color:white;
+            backdrop-filter: blur(10px);
+            height:fit-content;
+            width:fit-content;
+
+        }
+        p, span,label{
+            margin:3.5px;
+            font-size:0.75em;
+        }
+        #weatherTemp{
+            font-size:1.5em;
+            font-weight:100;
+        }
+        #feelsTemp{
+            font-size:1em;
+            font-weight:100;
+            text-align:left;
+        }
+        #tempHigh, #tempLow{
+            font-size:0.55em;
+            font-weight:100;
+            text-align:right;
+            z-index:99;
+        }
+
+        #extensionLogo{
+            transition: transform 0.175s ease-in-out;
+            cursor:pointer;
+        }
+        #extensionLogo:hover{
+            transform: scale(1.05);
+        }
+        #extensionLogo:active{
+            transform: scale(1);
+        }
+        .range {
+              -webkit-appearance: none;
+            width: 20%;
+            border-radius:22px;
+            
+        }
+        .range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius:22px;
+  background: #0473aa;
+  cursor: pointer;
+}
+        </style>
+</head>
+<body>
+    <br>
+    <h1 id = "time24">00:00:00</h1>
+    <h1 id = "time12">00:00 <span id="what12">PM</span></h1>
+
+    <div id = "weather">
+        <p id="weatherTemp">10°C  <span id = "weatherDesc">Clear Sky</span>    <span id="tempHigh">11°C</span><span id="tempLow">9°C</span></p>
+        
+       <p id = "feelsTemp">Feels like: 8°C</p>
+
+    </div>
+    
+    <img title = "Extension Settings" draggable = false id="extensionLogo" src="https://i.imgur.com/mEfvqU5.png" alt = "Lol u hav no wifi" width="50" style="position:fixed; bottom:10px; left:10px; opacity:0.75; image-rendering:pixelated;"/>
+
+    <div  id = "settings" style="width:75%; height:75%; border-radius:25px; background-color:rgba(32, 32, 32, 0.75); position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); backdrop-filter: blur(10px); z-index:999;">
+        <h1 style="font-size:2em;">Extension Settings</h1>
+        
+        <p id="colorRangeText">Color Range: 100</p> <input class="range" type="range" id="colorRange" name="colorRange" min="0" max="255" value="100">
+       <br>
+       <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+  <label class="form-check-label" for="flexCheckChecked">
+    Solid Color
+  </label>
+    </div>
+    <input hidden id="color" type="color">
+
+    
+
+
+<script defer src="./script.js"></script>
+
+</body>
+</html>
